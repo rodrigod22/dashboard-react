@@ -9,7 +9,7 @@ const AppRoutes: React.FC = () => {
   return (
     <Layout>
       <Switch>
-        <Route path="/dashoboard" exact component={Dashboad} />
+        <Route path="/dashboard" exact component={Dashboad} />
         <Route path="/list/:type" exact component={List} />
       </Switch>
     </Layout>
