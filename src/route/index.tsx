@@ -1,0 +1,14 @@
+import React from 'react';
+import Layout from './../components/Layout/index';
+
+import AppRoutes from './app.routes';
+import { BrowserRouter } from 'react-router-dom';
+
+
+const Routes: React.FC = () => (
+  <BrowserRouter>
+    <AppRoutes />
+  </BrowserRouter>
+
+)
+export default Routes;
