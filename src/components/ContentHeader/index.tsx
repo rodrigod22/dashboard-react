@@ -6,8 +6,6 @@ import {
   Controllers
 } from './styles';
 
-import SelectInput from './../SelectInput/index';
-
 interface IContentHeaderProps {
   title: string;
   lineColor: string;
