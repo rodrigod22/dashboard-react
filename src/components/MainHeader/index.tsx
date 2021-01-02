@@ -1,15 +1,25 @@
-import React, { useMemo } from 'react'
+import React, { useMemo, useState } from 'react'
 
+import Emojis from '../../utils/emojis';
+import Toggle from '../Toogle';
+import { useTheme } from '../../hooks/theme';
 import {
   Container,
   Profile,
   Welcome,
   UserName
 } from './styles';
-import Emojis from '../../utils/emojis';
-import Toggle from '../Toogle';
 
 const MainHeader: React.FC = () => {
+
+  const { toggleTheme, theme } = useTheme();
+
+  const [darkTheme, setDarkTheme] = useState(() => theme.title === 'dark' ? true : false);
+
+  const handleChangeTheme = () => {
+    setDarkTheme(!darkTheme)
+    toggleTheme();
+  }
 
   const emoji = useMemo(() => {
     const indice = Math.floor(Math.random() * Emojis.length);
@@ -18,8 +28,12 @@ const MainHeader: React.FC = () => {
 
   return (
     <Container>
-      <Toggle />
-
+      <Toggle
+        labelLeft="Light"
+        labelRight="Dark"
+        checked={darkTheme}
+        onChange={handleChangeTheme}
+      />
       <Profile>
         <Welcome>Ola, {emoji}</Welcome>
         <UserName>Rodrigo Peixoto</UserName>
