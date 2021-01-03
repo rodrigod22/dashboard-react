@@ -211,8 +211,6 @@ const Dashboad: React.FC = () => {
         return (yearSelected === currentYear && item.monthNumber <= currentMonth) || (yearSelected < currentYear)
       });
 
-
-
   }, [yearSelected])
 
 
@@ -370,22 +368,15 @@ const Dashboad: React.FC = () => {
           lineColorAmountEntry="#F7931B"
           lineColorAmountOutput="#E44C4E"
         />
-
         <BarChartBox
           data={relationGainsRecurrentVersusAtual}
           title="Entradas"
         />
-
         <BarChartBox
           data={relationExpensesRecurrentVersusAtual}
           title="Saídas"
         />
-
-
-
-
       </Content>
-
     </Container >
   )
 }
